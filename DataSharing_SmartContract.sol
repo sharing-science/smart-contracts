@@ -17,7 +17,7 @@ contract Covid19usecase{
     //contructor
     function Covid19usecase(){
         startTime = block.timestamp;
-        data_contributor = 0x583031d1113ad414f02576bd6afabfb302140225;//address of sender
+        data_contributor = 0x583031d1113ad414f02576bd6afabfb302140225;//address of data_contributor
         user = 0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db;
         state = contractState.Inactive;
         request_approval_result = 0;
@@ -42,14 +42,14 @@ contract Covid19usecase{
     
     function CreateContract() onlyContributor {
         require(state == contractState.NotReady);
-            state = contractState.ReadyforRequireRequest; //once locked the container will do a self check on the sensors
-            //RequireRequest(msg.sender); //trigger event
+            state = contractState.ReadyforRequireRequest;
+            
     }
     
     
     function RequireRequest() onlyContributor {
         require(state == contractState.ReadyforRequireRequest);
-            state = contractState.ReadyforSubmitRequest; //once locked the container will do a self check on the sensors
+            state = contractState.ReadyforSubmitRequest; 
             
     }
     
@@ -61,7 +61,7 @@ contract Covid19usecase{
     function ApproveRequest(int result) onlyContributor {
         require(state == contractState.ReadyforReview);
         request_approval_result = result;
-        if(request_approval_result == 1){//indicating the result is OK
+        if(request_approval_result == 1){//indicating the request has been approved
             state = contractState.Active;
             RequestApprovalDone("Self Check result is Success");//trigger event with result
         }
