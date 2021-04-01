@@ -60,7 +60,7 @@ contract Covid19usecase{
         request_approval_result = result;
         if(request_approval_result == 1){//indicating the request has been approved
             state = contractState.Active;
-            RequestApprovalDone("Self Check result is Success");//trigger event with result
+            RequestApprovalDone("Request is Approved");//trigger event with result
         }
         else if(request_approval_result == 0){
             state = contractState.Aborted;
