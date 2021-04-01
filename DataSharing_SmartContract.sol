@@ -2,9 +2,6 @@ contract Covid19usecase{
     //participating entities with Ethereum addresses
     address public data_contributor; 
     address public user; 
-    string public content;//description of container content
-    bytes32 public passphrase; //recived passphrase when money is deposited
-    string public receivedCode; //recived code to be hashed
     enum contractState { 
         NotReady, Created, ReadyforRequireRequest, ReadyforSubmitRequest, ReadyforReview, Active, Inactive, Aborted, Terminate
     }   
