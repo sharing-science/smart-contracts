@@ -29,7 +29,7 @@ contract Accounts {
     }
 
     function register() public {
-        require(addr_to_id[msg.sender] != 0);
+        require(addr_to_id[msg.sender] == 0);
         Account memory acc;
         acc.user_addr = msg.sender;
         acc.user_id = keccak256(acc.user_addr);
@@ -64,15 +64,5 @@ contract Accounts {
     function getScienceIndex(bytes32 id) public returns (uint science_index) {
         return (accounts[id].science_index);
     }
-
-
-
-
-
-
-
-
-
-
 
 }
