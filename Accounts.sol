@@ -1,3 +1,4 @@
+pragma solidity ^0.8.3;
 contract Accounts {
 
     address owner;
@@ -52,6 +53,7 @@ contract Accounts {
 
     //function updatePapers(bytes_32 id, bytes_32 paper_id) {
     //  accounts[id].papersusingdata_citations[paper_id]++;
+    //  updateScienceIndex(id);
     //}
 
     function updateScienceIndex(bytes32 id) private {
