@@ -42,6 +42,13 @@ contract Covid19usecase{
     uint discoverTime2;
     uint reportTime2;
     uint contractInactiveTime;
+    int recognize_Contribution=0;
+    int isResearchStatementAvailable=0;
+    int isProjectTitleAvailable=0;
+    int isUserNameAvailable=0;
+    int isAccessingInstitutionAvailable=0;
+    
+    
     
     struct Contributor {
         string _firstName;
@@ -348,8 +355,24 @@ contract Covid19usecase{
     //User(s) agree(s) to recognize the effort that Data Contributor(s) made in collecting and providing the Data and 
     //allow the following information in the approved Data Use Request to be made publicly available: 
     //non-confidential research statement of the Research Project, Project Title, Users’ names and Accessing Institution(s).
+    function recognizeContribution() public onlyUser{
+        require(state == contractState.Active);
+          recognize_Contribution=1;
+    }
     
+    function researchStatementAvailable() public onlyUser{
+        isResearchStatementAvailable=1;
+    }
     
+    function projectTitleAvailable() public onlyUser{
+        isProjectTitleAvailable=1;
+    }
     
+    function userNameAvailable() public onlyUser{
+        isUserNameAvailable=1;
+    }
     
-}
+    function accessingInstitutionAvailable() public onlyUser{
+        isAccessingInstitutionAvailable=1;
+    }
+    
