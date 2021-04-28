@@ -47,6 +47,8 @@ contract Covid19usecase{
     int isProjectTitleAvailable=0;
     int isUserNameAvailable=0;
     int isAccessingInstitutionAvailable=0;
+    uint inactiveTime;
+    uint reactiveTime;
     
     
     
@@ -195,16 +197,16 @@ contract Covid19usecase{
     //add committee also check for violation.
     
     
-    //if other collaborators report in 2 days, and the committee vertify the violation, the smart contract would be inactive for 15 days.
-    //if do not report in 2 days, and the committee vertify the violation, the smart contract would be aborted.
-    function collaboratorDiscover1() public onlyOtherCollaborator{
+    //if user reports in 2 days, and the committee vertifies the violation, the smart contract would be inactive for 15 days.
+    //if user does not report in 2 days, and the committee vertifies the violation, the smart contract would be aborted.
+    function userDiscover1() public onlyUser{
         require(state == contractState.Active);
         discoverTime1=block.timestamp;
         discover_violation1=1;
     }
     
     //report violation1
-    function collaboratorReport1() public onlyOtherCollaborator{
+    function UserReport1() public onlyUser{
         require(discover_violation1==1);
         reportTime1=block.timestamp;
     }
@@ -220,15 +222,24 @@ contract Covid19usecase{
     
     //set punishment
     function violationPunishment1() public onlyDataAccessCommittee{
-        //implement smart contract be inactive for 15 minutes.
-        /*
+        //implement smart contract be inactive for 15 days.
         if((reportTime-discoverTime<=2*1 days)&&(committee_check1==1)){
-            
-        }*/
+            state=contractState.inactive;
+            //start calculate inactive time.
+            inactiveTime=block.timestamp;
+        }
         if((reportTime1-discoverTime1>2*1 days)&&(committee_check1==1)){
             state=contractState.Aborted;
             emit RequestApprovalDone("Contract Aborted: Failure."); 
             selfdestruct(msg.sender);
+        }
+    }
+    
+    //check inactive time and turn the contract state to active if over 15 days.
+    function stopInactive() public onlyDataAccessCommittee{
+        reactiveTime=block.timestamp;
+        if(reactiveTime-inactiveTime>=15 days){
+            state=contractState.active;
         }
     }
     
@@ -249,7 +260,7 @@ contract Covid19usecase{
     //Clause3
     //User(s) shall not grant access to the Data to any third party without the prior written permission of the Data Access Committee.
     
-    //User(s) require permission for granting access to the data to third party.
+    //User(s) require permission for granting access to the data to third party from the data committee.
     function RequirePermissionForThirdParty() public onlyUser{
         Third_party_State=ThirdPartyPermissionState.ReadyforReview;
     }
@@ -292,11 +303,6 @@ contract Covid19usecase{
     
     //set punishment
     function violationPunishment2() public onlyDataAccessCommittee{
-        //implement smart contract be inactive for 15 minutes.
-        /*
-        if((reportTime-discoverTime<=2*1 days)&&(committee_check1==1)){
-            
-        }*/
         if((reportTime2-discoverTime2<=2*1 days)&&(committee_check1==1)){
             Third_party_State=ThirdPartyPermissionState.Aborted;
         }
@@ -376,3 +382,11 @@ contract Covid19usecase{
         isAccessingInstitutionAvailable=1;
     }
     
+    function AgreeContribution() public onlyUser{
+        if(recognize_Contribution==0||isResearchStatementAvailable==0||isProjectTitleAvailable==0||isUserNameAvailable==0||isAccessingInstitutionAvailable==0){
+            contractState.Aborted;
+        }
+    }
+    
+    
+}
