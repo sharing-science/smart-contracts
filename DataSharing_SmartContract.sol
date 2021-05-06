@@ -199,21 +199,21 @@ contract Covid19usecase{
     
     //if user reports in 2 days, and the committee vertifies the violation, the smart contract would be inactive for 15 days.
     //if user does not report in 2 days, and the committee vertifies the violation, the smart contract would be aborted.
-    function userDiscover1() public onlyUser{
+    function userDiscoverCollaboratorContactIndividuals() public onlyUser{
         require(state == contractState.Active);
         discoverTime1=block.timestamp;
         discover_violation1=1;
     }
     
     //report violation1
-    function UserReport1() public onlyUser{
+    function UserReportCollaboratorContactIndividuals() public onlyUser{
         require(discover_violation1==1);
         reportTime1=block.timestamp;
     }
     
     //committee check
     // committee will set committee_check1 to 1 or 0;
-    function committeeCheckViolation1(int result) public onlyDataAccessCommittee{
+    function committeeCheckCollaboratorContactIndividuals(int result) public onlyDataAccessCommittee{
         require(state == contractState.Active);
         if(result==1){
             committee_check1=1;
@@ -221,10 +221,10 @@ contract Covid19usecase{
     }
     
     //set punishment
-    function violationPunishment1() public onlyDataAccessCommittee{
+    function CollaboratorContactIndividualsSuspension() public onlyDataAccessCommittee{
         //implement smart contract be inactive for 15 days.
-        if((reportTime-discoverTime<=2*1 days)&&(committee_check1==1)){
-            state=contractState.inactive;
+        if((reportTime1-discoverTime1<=2*1 days)&&(committee_check1==1)){
+            state=contractState.Inactive;
             //start calculate inactive time.
             inactiveTime=block.timestamp;
         }
@@ -239,7 +239,7 @@ contract Covid19usecase{
     function stopInactive() public onlyDataAccessCommittee{
         reactiveTime=block.timestamp;
         if(reactiveTime-inactiveTime>=15 days){
-            state=contractState.active;
+            state=contractState.Active;
         }
     }
     
@@ -283,26 +283,29 @@ contract Covid19usecase{
     
     //Else if the users does not report in 2 days, and the violation is vertified by the committee, the whole contract and the third mparty permission will be aborted.
     
-    function userDiscover2() public onlyUser{
+    function userDiscoverThirdPartyViolation() public onlyUser{
         require(state == contractState.Active);
         discoverTime2=block.timestamp;
         discover_violation2=1;
     }
     
     //report violation2
-    function userReport2() public onlyUser{
+    function userReportThirdPartyViolation() public onlyUser{
         require(discover_violation2==1);
         reportTime2=block.timestamp;
     }
     
     //committee check
-    function committeeCheckViolation2() public onlyDataAccessCommittee{
+    //if vertify, set result to 1; if not vertify, set result to 0.
+    function committeeCheckThirdPartyViolation(int result) public onlyDataAccessCommittee{
         require(state == contractState.Active);
-        committee_check2=1;
+        if(result==1){
+            committee_check2=1;
+        }
     }
     
     //set punishment
-    function violationPunishment2() public onlyDataAccessCommittee{
+    function ThirdPartyViolationTermination() public onlyDataAccessCommittee{
         if((reportTime2-discoverTime2<=2*1 days)&&(committee_check1==1)){
             Third_party_State=ThirdPartyPermissionState.Aborted;
         }
@@ -382,11 +385,10 @@ contract Covid19usecase{
         isAccessingInstitutionAvailable=1;
     }
     
-    function AgreeContribution() public onlyUser{
+    function AgreeContribution() public onlyDataAccessCommittee{
         if(recognize_Contribution==0||isResearchStatementAvailable==0||isProjectTitleAvailable==0||isUserNameAvailable==0||isAccessingInstitutionAvailable==0){
             contractState.Aborted;
         }
     }
-    
     
 }
