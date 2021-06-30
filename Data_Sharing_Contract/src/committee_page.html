@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Data Committee</title>
+  </head>
+  <body>
+    <nav class="navbar fixed-top flex-md-nowrap p-0 shadow">
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap d-none d-sm-none d-sm-block">
+          <small><a class="nav-link" href="#"><span id="account"></span></a></small>
+        </li>
+      </ul>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <main role="main" class="col-lg-12 d-flex justify-content-center">
+          <div id="loader" class="text-center">
+            <p class="text-center">Loading...</p>
+          </div>
+          <div id="content">
+            <h1>Data Committee</h1>
+            <ul id="clauseList" class="list-unstyled">
+              <div class="clauseTemplate" class="checkbox" style="display: none">
+                <label>
+                 
+                  <input type="button" value="Agree">   
+                  <span class="content">Clause content goes here...</span>
+                </label>
+                <div class="upload_request">
+                
+                  <input type="file" id="file-to-upload" />
+                  <button class="upload-button">Upload</button>
+                </div>
+              </div>
+            </ul>
+            <ul id="completedClauseList" class="list-unstyled">
+            </ul>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

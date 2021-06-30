@@ -1,0 +1,3557 @@
+{
+  "contractName": "Covid19usecase",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "clauses",
+      "outputs": [
+        {
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "name": "content",
+          "type": "string"
+        },
+        {
+          "name": "agree",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function",
+      "signature": "0xca6009be"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "State",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function",
+      "signature": "0xf1b6dccd"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor",
+      "signature": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "content",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "name": "agree",
+          "type": "bool"
+        }
+      ],
+      "name": "ClauseCreated",
+      "type": "event",
+      "signature": "0xa478e3ba1c41ddffd320b46a3e953ba655940caa0fbb2356f50123c1ca933686"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "id",
+          "type": "uint256"
+        }
+      ],
+      "name": "RequestSumbitted",
+      "type": "event",
+      "signature": "0xbdc0810d1cedabb980fd30e01e92a884f0e56653f2cc84cde0ea897a63238afb"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getClauseCount",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function",
+      "signature": "0xf1fbd0cb"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getState",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function",
+      "signature": "0x1865c57d"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_content",
+          "type": "string"
+        }
+      ],
+      "name": "createClause",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "signature": "0x99b915aa"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "agree",
+          "type": "bool"
+        }
+      ],
+      "name": "agreeClause1",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "signature": "0x60cb989f"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_id",
+          "type": "uint256"
+        }
+      ],
+      "name": "submitRequest",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "signature": "0x1cdd1653"
+    }
+  ],
+  "bytecode": "0x60806040526000805534801561001457600080fd5b5061004060c060405190810160405280609a8152602001610a59609a9139640100000000610105810204565b61006e6102406040519081016040528061020b8152602001610af361020b9139640100000000610105810204565b61009c6101e0604051908101604052806101bf815260200161089a6101bf9139640100000000610105810204565b6100c86101006040519081016040528060c88152602001610e4560c89139640100000000610105810204565b6100f6610180604051908101604052806101478152602001610cfe6101479139640100000000610105810204565b6001805460ff191690556102c5565b6000805460019081018083556040805160608101825282815260208082018781528284018790529386526002815291909420845181559151805192936101539390850192919091019061022a565b5060408201518160020160006101000a81548160ff0219169083151502179055509050507fa478e3ba1c41ddffd320b46a3e953ba655940caa0fbb2356f50123c1ca933686600054826000604051808481526020018060200183151515158152602001828103825284818151815260200191508051906020019080838360005b838110156101eb5781810151838201526020016101d3565b50505050905090810190601f1680156102185780820380516001836020036101000a031916815260200191505b5094505050505060405180910390a150565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061026b57805160ff1916838001178555610298565b82800160010185558215610298579182015b8281111561029857825182559160200191906001019061027d565b506102a49291506102a8565b5090565b6102c291905b808211156102a457600081556001016102ae565b90565b6105c6806102d46000396000f3fe6080604052600436106100825763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416631865c57d81146100875780631cdd1653146100c057806360cb989f146100ec57806399b915aa14610118578063ca6009be146101cb578063f1b6dccd1461027f578063f1fbd0cb14610294575b600080fd5b34801561009357600080fd5b5061009c6102bb565b604051808260098111156100ac57fe5b60ff16815260200191505060405180910390f35b3480156100cc57600080fd5b506100ea600480360360208110156100e357600080fd5b50356102c5565b005b3480156100f857600080fd5b506100ea6004803603602081101561010f57600080fd5b50351515610309565b34801561012457600080fd5b506100ea6004803603602081101561013b57600080fd5b81019060208101813564010000000081111561015657600080fd5b82018360208201111561016857600080fd5b8035906020019184600183028401116401000000008311171561018a57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250929550610320945050505050565b3480156101d757600080fd5b506101f5600480360360208110156101ee57600080fd5b5035610445565b604051808481526020018060200183151515158152602001828103825284818151815260200191508051906020019080838360005b8381101561024257818101518382015260200161022a565b50505050905090810190601f16801561026f5780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b34801561028b57600080fd5b5061009c6104f3565b3480156102a057600080fd5b506102a96104fc565b60408051918252519081900360200190f35b60015460ff165b90565b6001805460ff191660041790556040805182815290517fbdc0810d1cedabb980fd30e01e92a884f0e56653f2cc84cde0ea897a63238afb916020908290030190a150565b801561031d576001805460ff191660021790555b50565b60008054600190810180835560408051606081018252828152602080820187815282840187905293865260028152919094208451815591518051929361036e93908501929190910190610502565b5060408201518160020160006101000a81548160ff0219169083151502179055509050507fa478e3ba1c41ddffd320b46a3e953ba655940caa0fbb2356f50123c1ca933686600054826000604051808481526020018060200183151515158152602001828103825284818151815260200191508051906020019080838360005b838110156104065781810151838201526020016103ee565b50505050905090810190601f1680156104335780820380516001836020036101000a031916815260200191505b5094505050505060405180910390a150565b60026020818152600092835260409283902080546001808301805487519281161561010002600019011695909504601f81018590048502820185019096528581529094919390929091908301828280156104e05780601f106104b5576101008083540402835291602001916104e0565b820191906000526020600020905b8154815290600101906020018083116104c357829003601f168201915b5050506002909301549192505060ff1683565b60015460ff1681565b60005490565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061054357805160ff1916838001178555610570565b82800160010185558215610570579182015b82811115610570578251825591602001919060010190610555565b5061057c929150610580565b5090565b6102c291905b8082111561057c576000815560010161058656fea165627a7a723058203ccd76e6c2337486c149d33d0b83667d5c264781240b1a9c87d65391486447830029457863657074206173207265717569726564206279206c61772c2055736572287329207368616c6c206e6f74206772616e742061636365737320746f20746865204461746120746f20616e7920746869726420706172747920776974686f757420746865207072696f72207772697474656e207065726d697373696f6e207375626d69747465642062792074686520757365727320746f2074686520446174612041636365737320436f6d6d69747465652e205573657228732920616772656520746f207265706f727420616e7920756e617574686f72697a65642061636365737320757365287329206f7220646973636c6f73757265287329206f662074686520446174612062792074686520746869726420706172747920746f2074686520446174612041636365737320436f6d6d6974746565206e6f206c61746572207468616e203220627573696e657373206461797320616674657220646973636f766572792e20546865206f6363757272656e6365206f66206120446174612041636365737320496e636964656e742069732067726f756e6420666f72207465726d696e6174696f6e206f6620616e792061636365737320746f20446174612e466f7220656163682070726f706f7365642052657365617263682050726f6a6563742c205573657228732920616772656528732920746f207375626d69742061204461746120557365205265717565737420746f2074686520446174612041636365737320436f6d6d697474656520666f722072657669657720616e6420617070726f76616c20746f206163636573732074686520446174612e5573657228732920616772656528732920746f206e6f7420617474656d707420746f20636f6e7461637420616e7920696e646976696475616c732077686f2061726520746865207375626a65637473206f662074686520446174612c20616e79206b6e6f776e206c6976696e672072656c6174697665732c20616e79204461746120436f6e7472696275746f72732c206f72206865616c7468636172652070726f76696465727320756e6c657373207265717569726564206279206c617720746f206d61696e7461696e207075626c6963206865616c746820616e64207361666574792e205573657228732920616772656520746f207265706f727420616e7920756e617574686f72697a65642061636365737320757365287329206f7220646973636c6f73757265287329206f66207468652044617461206279206f746865722075736572732028636f6c6c61626f7261746f722920746f2074686520446174612041636365737320436f6d6d6974746565206e6f206c61746572207468616e203220627573696e657373206461797320616674657220646973636f766572792e20546865206f6363757272656e6365206f66206120446174612041636365737320496e636964656e742069732067726f756e6420666f722073757370656e73696f6e206f66206669667465656e2064617973206f6620616e792061636365737320746f20446174612e5573657228732920616772656528732920746f207265636f676e697a6520746865206566666f72742074686174204461746120436f6e7472696275746f72287329206d61646520696e20636f6c6c656374696e6720616e642070726f766964696e6720746865204461746120616e6420616c6c6f772074686520666f6c6c6f77696e6720696e666f726d6174696f6e20696e2074686520617070726f766564204461746120557365205265717565737420746f206265206d616465207075626c69636c7920617661696c61626c653a206e6f6e2d636f6e666964656e7469616c2072657365617263682073746174656d656e74206f66207468652052657365617263682050726f6a6563742c2050726f6a656374205469746c652c205573657273e28099206e616d657320616e6420416363657373696e6720496e737469747574696f6e28732954686520446174612055736520526571756573742077696c6c2072656d61696e20696e2065666665637420666f72206120706572696f64206f662066697665202835292079656172732066726f6d20746865204461746120557365205265717565737420456666656374697665204461746520616e642077696c6c206175746f6d61746963616c6c79206578706972652061742074686520656e64206f66207468697320706572696f6420756e6c657373207465726d696e61746564206f722072656e657765642e",
+  "deployedBytecode": "0x6080604052600436106100825763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416631865c57d81146100875780631cdd1653146100c057806360cb989f146100ec57806399b915aa14610118578063ca6009be146101cb578063f1b6dccd1461027f578063f1fbd0cb14610294575b600080fd5b34801561009357600080fd5b5061009c6102bb565b604051808260098111156100ac57fe5b60ff16815260200191505060405180910390f35b3480156100cc57600080fd5b506100ea600480360360208110156100e357600080fd5b50356102c5565b005b3480156100f857600080fd5b506100ea6004803603602081101561010f57600080fd5b50351515610309565b34801561012457600080fd5b506100ea6004803603602081101561013b57600080fd5b81019060208101813564010000000081111561015657600080fd5b82018360208201111561016857600080fd5b8035906020019184600183028401116401000000008311171561018a57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600092019190915250929550610320945050505050565b3480156101d757600080fd5b506101f5600480360360208110156101ee57600080fd5b5035610445565b604051808481526020018060200183151515158152602001828103825284818151815260200191508051906020019080838360005b8381101561024257818101518382015260200161022a565b50505050905090810190601f16801561026f5780820380516001836020036101000a031916815260200191505b5094505050505060405180910390f35b34801561028b57600080fd5b5061009c6104f3565b3480156102a057600080fd5b506102a96104fc565b60408051918252519081900360200190f35b60015460ff165b90565b6001805460ff191660041790556040805182815290517fbdc0810d1cedabb980fd30e01e92a884f0e56653f2cc84cde0ea897a63238afb916020908290030190a150565b801561031d576001805460ff191660021790555b50565b60008054600190810180835560408051606081018252828152602080820187815282840187905293865260028152919094208451815591518051929361036e93908501929190910190610502565b5060408201518160020160006101000a81548160ff0219169083151502179055509050507fa478e3ba1c41ddffd320b46a3e953ba655940caa0fbb2356f50123c1ca933686600054826000604051808481526020018060200183151515158152602001828103825284818151815260200191508051906020019080838360005b838110156104065781810151838201526020016103ee565b50505050905090810190601f1680156104335780820380516001836020036101000a031916815260200191505b5094505050505060405180910390a150565b60026020818152600092835260409283902080546001808301805487519281161561010002600019011695909504601f81018590048502820185019096528581529094919390929091908301828280156104e05780601f106104b5576101008083540402835291602001916104e0565b820191906000526020600020905b8154815290600101906020018083116104c357829003601f168201915b5050506002909301549192505060ff1683565b60015460ff1681565b60005490565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061054357805160ff1916838001178555610570565b82800160010185558215610570579182015b82811115610570578251825591602001919060010190610555565b5061057c929150610580565b5090565b6102c291905b8082111561057c576000815560010161058656fea165627a7a723058203ccd76e6c2337486c149d33d0b83667d5c264781240b1a9c87d65391486447830029",
+  "sourceMap": "63:2916:2:-;;;109:1;90:20;;381:1821;8:9:-1;5:2;;;30:1;27;20:12;5:2;381:1821:2;408:170;;;;;;;;;;;;;;;;;;;:12;;;;:170;:::i;:::-;584:539;;;;;;;;;;;;;;;;;;;:12;;;;:539;:::i;:::-;1129:463;;;;;;;;;;;;;;;;;;;:12;;;;:463;:::i;:::-;1598:216;;;;;;;;;;;;;;;;;;;:12;;;;:216;:::i;:::-;1820:343;;;;;;;;;;;;;;;;;;;:12;;;;:343;:::i;:::-;2169:5;:28;;-1:-1:-1;;2169:28:2;;;63:2916;;2537:197;2596:11;:14;;;;;;;;;2639:36;;;;;;;;;;;;;;;;;;;;;;;;2616:20;;;:7;:20;;;;;;:59;;;;;;;;:20;;:59;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2686:43;2700:11;;2713:8;2723:5;2686:43;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;2686:43:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2537:197;:::o;63:2916::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;63:2916:2;;;-1:-1:-1;63:2916:2;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+  "deployedSourceMap": "63:2916:2:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2455:78;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2455:78:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2860:117;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2860:117:2;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;2860:117:2;;;;;2738:118;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2738:118:2;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;2738:118:2;;;;;2537:197;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2537:197:2;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;2537:197:2;;;;;;;;21:11:-1;5:28;;2:2;;;46:1;43;36:12;2:2;2537:197:2;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;2537:197:2;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;2537:197:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;81:16;;74:27;;;;-1:-1;2537:197:2;;-1:-1:-1;2537:197:2;;-1:-1:-1;;;;;2537:197:2;2206:38;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2206:38:2;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;2206:38:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;2206:38:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;349:26;;8:9:-1;5:2;;;30:1;27;20:12;5:2;349:26:2;;;;2370:81;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2370:81:2;;;;;;;;;;;;;;;;;;;;2455:78;2523:5;;;;2455:78;;:::o;2860:117::-;2906:5;:34;;-1:-1:-1;;2906:34:2;2912:28;2906:34;;;2951:21;;;;;;;;;;;;;;;;;;2860:117;:::o;2738:118::-;2788:5;2785:67;;;2803:5;:42;;-1:-1:-1;;2803:42:2;2809:36;2803:42;;;2785:67;2738:118;:::o;2537:197::-;2596:11;:14;;;;;;;;;2639:36;;;;;;;;;;;;;;;;;;;;;;;;2616:20;;;:7;:20;;;;;;:59;;;;;;;;:20;;:59;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2686:43;2700:11;;2713:8;2723:5;2686:43;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;2686:43:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2537:197;:::o;2206:38::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;2206:38:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;2206:38:2;;;;;;;-1:-1:-1;;2206:38:2;;;:::o;349:26::-;;;;;;:::o;2370:81::-;2417:4;2435:11;2370:81;:::o;63:2916::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;63:2916:2;;;-1:-1:-1;63:2916:2;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;",
+  "source": "pragma solidity ^0.5.0;\n//import \"./BiomedicalDataToken.sol\";\n\ncontract Covid19usecase{\n  uint clauseCount = 0;\n\n  struct Clause {\n    uint id;\n    string content;\n    bool agree;\n\n  }\n\n  enum contractState { \n    NotReady, Created, ReadyforRequireRequest, ReadyforSubmitRequest, ReadyforReview, Active, Inactive, Aborted, Terminate, Expire\n  } \n\n  contractState public State;\n\n\n  constructor() public {\n    createClause(\"For each proposed Research Project, User(s) agree(s) to submit a Data Use Request to the Data Access Committee for review and approval to access the Data.\");\n    createClause(\"User(s) agree(s) to not attempt to contact any individuals who are the subjects of the Data, any known living relatives, any Data Contributors, or healthcare providers unless required by law to maintain public health and safety. User(s) agree to report any unauthorized access use(s) or disclosure(s) of the Data by other users (collaborator) to the Data Access Committee no later than 2 business days after discovery. The occurrence of a Data Access Incident is ground for suspension of fifteen days of any access to Data.\");\n    createClause(\"Except as required by law, User(s) shall not grant access to the Data to any third party without the prior written permission submitted by the users to the Data Access Committee. User(s) agree to report any unauthorized access use(s) or disclosure(s) of the Data by the third party to the Data Access Committee no later than 2 business days after discovery. The occurrence of a Data Access Incident is ground for termination of any access to Data.\");\n    createClause(\"The Data Use Request will remain in effect for a period of five (5) years from the Data Use Request Effective Date and will automatically expire at the end of this period unless terminated or renewed.\");\n    createClause(\"User(s) agree(s) to recognize the effort that Data Contributor(s) made in collecting and providing the Data and allow the following information in the approved Data Use Request to be made publicly available: non-confidential research statement of the Research Project, Project Title, Users’ names and Accessing Institution(s)\");\n    State=contractState.NotReady;\n  }\n\n  mapping(uint => Clause) public clauses;\n\n  event ClauseCreated(\n    uint id,\n    string content,\n    bool agree\n  );\n\n  event RequestSumbitted(\n    uint id\n  );\n\n  function getClauseCount() public view returns (uint){\n    return clauseCount;\n  }\n\n  function getState() public view returns (contractState){\n    return State;\n  }\n\n  function createClause(string memory _content) public {\n    clauseCount ++;\n    clauses[clauseCount] = Clause(clauseCount, _content, false);\n    emit ClauseCreated(clauseCount, _content, false);\n  }\n\n  function agreeClause1(bool agree) public {\n    if(agree) {\n      State=contractState.ReadyforRequireRequest;\n    }\n  }\n\n  function submitRequest(uint _id) public {\n    State=contractState.ReadyforReview;\n    emit RequestSumbitted(_id);\n  }\n}",
+  "sourcePath": "/Users/jenniferzhan/Desktop/data_sharing_contract/contracts/Covid19usecase.sol",
+  "ast": {
+    "absolutePath": "/Users/jenniferzhan/Desktop/data_sharing_contract/contracts/Covid19usecase.sol",
+    "exportedSymbols": {
+      "Covid19usecase": [
+        645
+      ]
+    },
+    "id": 646,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 506,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:2"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 645,
+        "linearizedBaseContracts": [
+          645
+        ],
+        "name": "Covid19usecase",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 509,
+            "name": "clauseCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 645,
+            "src": "90:20:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 507,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "90:4:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 508,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "109:1:2",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "internal"
+          },
+          {
+            "canonicalName": "Covid19usecase.Clause",
+            "id": 516,
+            "members": [
+              {
+                "constant": false,
+                "id": 511,
+                "name": "id",
+                "nodeType": "VariableDeclaration",
+                "scope": 516,
+                "src": "135:7:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 510,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "135:4:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 513,
+                "name": "content",
+                "nodeType": "VariableDeclaration",
+                "scope": 516,
+                "src": "148:14:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 512,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "148:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 515,
+                "name": "agree",
+                "nodeType": "VariableDeclaration",
+                "scope": 516,
+                "src": "168:10:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 514,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "168:4:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Clause",
+            "nodeType": "StructDefinition",
+            "scope": 645,
+            "src": "115:69:2",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "Covid19usecase.contractState",
+            "id": 527,
+            "members": [
+              {
+                "id": 517,
+                "name": "NotReady",
+                "nodeType": "EnumValue",
+                "src": "214:8:2"
+              },
+              {
+                "id": 518,
+                "name": "Created",
+                "nodeType": "EnumValue",
+                "src": "224:7:2"
+              },
+              {
+                "id": 519,
+                "name": "ReadyforRequireRequest",
+                "nodeType": "EnumValue",
+                "src": "233:22:2"
+              },
+              {
+                "id": 520,
+                "name": "ReadyforSubmitRequest",
+                "nodeType": "EnumValue",
+                "src": "257:21:2"
+              },
+              {
+                "id": 521,
+                "name": "ReadyforReview",
+                "nodeType": "EnumValue",
+                "src": "280:14:2"
+              },
+              {
+                "id": 522,
+                "name": "Active",
+                "nodeType": "EnumValue",
+                "src": "296:6:2"
+              },
+              {
+                "id": 523,
+                "name": "Inactive",
+                "nodeType": "EnumValue",
+                "src": "304:8:2"
+              },
+              {
+                "id": 524,
+                "name": "Aborted",
+                "nodeType": "EnumValue",
+                "src": "314:7:2"
+              },
+              {
+                "id": 525,
+                "name": "Terminate",
+                "nodeType": "EnumValue",
+                "src": "323:9:2"
+              },
+              {
+                "id": 526,
+                "name": "Expire",
+                "nodeType": "EnumValue",
+                "src": "334:6:2"
+              }
+            ],
+            "name": "contractState",
+            "nodeType": "EnumDefinition",
+            "src": "188:156:2"
+          },
+          {
+            "constant": false,
+            "id": 529,
+            "name": "State",
+            "nodeType": "VariableDeclaration",
+            "scope": 645,
+            "src": "349:26:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_enum$_contractState_$527",
+              "typeString": "enum Covid19usecase.contractState"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 528,
+              "name": "contractState",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 527,
+              "src": "349:13:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_enum$_contractState_$527",
+                "typeString": "enum Covid19usecase.contractState"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 557,
+              "nodeType": "Block",
+              "src": "402:1800:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "466f7220656163682070726f706f7365642052657365617263682050726f6a6563742c205573657228732920616772656528732920746f207375626d69742061204461746120557365205265717565737420746f2074686520446174612041636365737320436f6d6d697474656520666f722072657669657720616e6420617070726f76616c20746f206163636573732074686520446174612e",
+                        "id": 533,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "421:156:2",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_64b0aed3e865830816360445eba7af11129e0a229e3193fa0e34c2186f54836c",
+                          "typeString": "literal_string \"For each proposed Research Project, User(s) agree(s) to submit a Data Use Request to the Data Access Committee for review and approval to access the Data.\""
+                        },
+                        "value": "For each proposed Research Project, User(s) agree(s) to submit a Data Use Request to the Data Access Committee for review and approval to access the Data."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_64b0aed3e865830816360445eba7af11129e0a229e3193fa0e34c2186f54836c",
+                          "typeString": "literal_string \"For each proposed Research Project, User(s) agree(s) to submit a Data Use Request to the Data Access Committee for review and approval to access the Data.\""
+                        }
+                      ],
+                      "id": 532,
+                      "name": "createClause",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 615,
+                      "src": "408:12:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 534,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "408:170:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 535,
+                  "nodeType": "ExpressionStatement",
+                  "src": "408:170:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "5573657228732920616772656528732920746f206e6f7420617474656d707420746f20636f6e7461637420616e7920696e646976696475616c732077686f2061726520746865207375626a65637473206f662074686520446174612c20616e79206b6e6f776e206c6976696e672072656c6174697665732c20616e79204461746120436f6e7472696275746f72732c206f72206865616c7468636172652070726f76696465727320756e6c657373207265717569726564206279206c617720746f206d61696e7461696e207075626c6963206865616c746820616e64207361666574792e205573657228732920616772656520746f207265706f727420616e7920756e617574686f72697a65642061636365737320757365287329206f7220646973636c6f73757265287329206f66207468652044617461206279206f746865722075736572732028636f6c6c61626f7261746f722920746f2074686520446174612041636365737320436f6d6d6974746565206e6f206c61746572207468616e203220627573696e657373206461797320616674657220646973636f766572792e20546865206f6363757272656e6365206f66206120446174612041636365737320496e636964656e742069732067726f756e6420666f722073757370656e73696f6e206f66206669667465656e2064617973206f6620616e792061636365737320746f20446174612e",
+                        "id": 537,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "597:525:2",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_8e1c3435a8ca9f7a0893432df672d30e8843b54aa6e8577fafacc1f618bcf9fe",
+                          "typeString": "literal_string \"User(s) agree(s) to not attempt to contact any individuals who are the subjects of the Data, any known living relatives, any Data Contributors, or healthcare providers unless required by law to maintain public health and safety. User(s) agree to report any unauthorized access use(s) or disclosure(s) of the Data by other users (collaborator) to the Data Access Committee no later than 2 business days after discovery. The occurrence of a Data Access Incident is ground for suspension of fifteen days of any access to Data.\""
+                        },
+                        "value": "User(s) agree(s) to not attempt to contact any individuals who are the subjects of the Data, any known living relatives, any Data Contributors, or healthcare providers unless required by law to maintain public health and safety. User(s) agree to report any unauthorized access use(s) or disclosure(s) of the Data by other users (collaborator) to the Data Access Committee no later than 2 business days after discovery. The occurrence of a Data Access Incident is ground for suspension of fifteen days of any access to Data."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_8e1c3435a8ca9f7a0893432df672d30e8843b54aa6e8577fafacc1f618bcf9fe",
+                          "typeString": "literal_string \"User(s) agree(s) to not attempt to contact any individuals who are the subjects of the Data, any known living relatives, any Data Contributors, or healthcare providers unless required by law to maintain public health and safety. User(s) agree to report any unauthorized access use(s) or disclosure(s) of the Data by other users (collaborator) to the Data Access Committee no later than 2 business days after discovery. The occurrence of a Data Access Incident is ground for suspension of fifteen days of any access to Data.\""
+                        }
+                      ],
+                      "id": 536,
+                      "name": "createClause",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 615,
+                      "src": "584:12:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 538,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "584:539:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 539,
+                  "nodeType": "ExpressionStatement",
+                  "src": "584:539:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "457863657074206173207265717569726564206279206c61772c2055736572287329207368616c6c206e6f74206772616e742061636365737320746f20746865204461746120746f20616e7920746869726420706172747920776974686f757420746865207072696f72207772697474656e207065726d697373696f6e207375626d69747465642062792074686520757365727320746f2074686520446174612041636365737320436f6d6d69747465652e205573657228732920616772656520746f207265706f727420616e7920756e617574686f72697a65642061636365737320757365287329206f7220646973636c6f73757265287329206f662074686520446174612062792074686520746869726420706172747920746f2074686520446174612041636365737320436f6d6d6974746565206e6f206c61746572207468616e203220627573696e657373206461797320616674657220646973636f766572792e20546865206f6363757272656e6365206f66206120446174612041636365737320496e636964656e742069732067726f756e6420666f72207465726d696e6174696f6e206f6620616e792061636365737320746f20446174612e",
+                        "id": 541,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1142:449:2",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_216fba857f8a444082b35cdd093950c88cac27d63f16e1e22c548e556d5cc590",
+                          "typeString": "literal_string \"Except as required by law, User(s) shall not grant access to the Data to any third party without the prior written permission submitted by the users to the Data Access Committee. User(s) agree to report any unauthorized access use(s) or disclosure(s) of the Data by the third party to the Data Access Committee no later than 2 business days after discovery. The occurrence of a Data Access Incident is ground for termination of any access to Data.\""
+                        },
+                        "value": "Except as required by law, User(s) shall not grant access to the Data to any third party without the prior written permission submitted by the users to the Data Access Committee. User(s) agree to report any unauthorized access use(s) or disclosure(s) of the Data by the third party to the Data Access Committee no later than 2 business days after discovery. The occurrence of a Data Access Incident is ground for termination of any access to Data."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_216fba857f8a444082b35cdd093950c88cac27d63f16e1e22c548e556d5cc590",
+                          "typeString": "literal_string \"Except as required by law, User(s) shall not grant access to the Data to any third party without the prior written permission submitted by the users to the Data Access Committee. User(s) agree to report any unauthorized access use(s) or disclosure(s) of the Data by the third party to the Data Access Committee no later than 2 business days after discovery. The occurrence of a Data Access Incident is ground for termination of any access to Data.\""
+                        }
+                      ],
+                      "id": 540,
+                      "name": "createClause",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 615,
+                      "src": "1129:12:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 542,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1129:463:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 543,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1129:463:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "54686520446174612055736520526571756573742077696c6c2072656d61696e20696e2065666665637420666f72206120706572696f64206f662066697665202835292079656172732066726f6d20746865204461746120557365205265717565737420456666656374697665204461746520616e642077696c6c206175746f6d61746963616c6c79206578706972652061742074686520656e64206f66207468697320706572696f6420756e6c657373207465726d696e61746564206f722072656e657765642e",
+                        "id": 545,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1611:202:2",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_e034db0c24262930928e11f7ee7c20ff9f89a336c2d6baf7297c4ee2e247f23a",
+                          "typeString": "literal_string \"The Data Use Request will remain in effect for a period of five (5) years from the Data Use Request Effective Date and will automatically expire at the end of this period unless terminated or renewed.\""
+                        },
+                        "value": "The Data Use Request will remain in effect for a period of five (5) years from the Data Use Request Effective Date and will automatically expire at the end of this period unless terminated or renewed."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_e034db0c24262930928e11f7ee7c20ff9f89a336c2d6baf7297c4ee2e247f23a",
+                          "typeString": "literal_string \"The Data Use Request will remain in effect for a period of five (5) years from the Data Use Request Effective Date and will automatically expire at the end of this period unless terminated or renewed.\""
+                        }
+                      ],
+                      "id": 544,
+                      "name": "createClause",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 615,
+                      "src": "1598:12:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 546,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1598:216:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 547,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1598:216:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "5573657228732920616772656528732920746f207265636f676e697a6520746865206566666f72742074686174204461746120436f6e7472696275746f72287329206d61646520696e20636f6c6c656374696e6720616e642070726f766964696e6720746865204461746120616e6420616c6c6f772074686520666f6c6c6f77696e6720696e666f726d6174696f6e20696e2074686520617070726f766564204461746120557365205265717565737420746f206265206d616465207075626c69636c7920617661696c61626c653a206e6f6e2d636f6e666964656e7469616c2072657365617263682073746174656d656e74206f66207468652052657365617263682050726f6a6563742c2050726f6a656374205469746c652c205573657273e28099206e616d657320616e6420416363657373696e6720496e737469747574696f6e287329",
+                        "id": 549,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1833:329:2",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_c3440367edf5c3852c95dd3c999966858c4f34a31301701556a68bef844f7e40",
+                          "typeString": "literal_string \"User(s) agree(s) to recognize the effort that Data Contributor(s) made in collecting and providing the Data and allow the following information in the approved Data Use Request to be made publicly available: non-confidential research statement of the Research Project, Project Title, Users’ names and Accessing Institution(s)\""
+                        },
+                        "value": "User(s) agree(s) to recognize the effort that Data Contributor(s) made in collecting and providing the Data and allow the following information in the approved Data Use Request to be made publicly available: non-confidential research statement of the Research Project, Project Title, Users’ names and Accessing Institution(s)"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_c3440367edf5c3852c95dd3c999966858c4f34a31301701556a68bef844f7e40",
+                          "typeString": "literal_string \"User(s) agree(s) to recognize the effort that Data Contributor(s) made in collecting and providing the Data and allow the following information in the approved Data Use Request to be made publicly available: non-confidential research statement of the Research Project, Project Title, Users’ names and Accessing Institution(s)\""
+                        }
+                      ],
+                      "id": 548,
+                      "name": "createClause",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 615,
+                      "src": "1820:12:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 550,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1820:343:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 551,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1820:343:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 555,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 552,
+                      "name": "State",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 529,
+                      "src": "2169:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_contractState_$527",
+                        "typeString": "enum Covid19usecase.contractState"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 553,
+                        "name": "contractState",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 527,
+                        "src": "2175:13:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_contractState_$527_$",
+                          "typeString": "type(enum Covid19usecase.contractState)"
+                        }
+                      },
+                      "id": 554,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "NotReady",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "2175:22:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_contractState_$527",
+                        "typeString": "enum Covid19usecase.contractState"
+                      }
+                    },
+                    "src": "2169:28:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_contractState_$527",
+                      "typeString": "enum Covid19usecase.contractState"
+                    }
+                  },
+                  "id": 556,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2169:28:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 558,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 530,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "392:2:2"
+            },
+            "returnParameters": {
+              "id": 531,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "402:0:2"
+            },
+            "scope": 645,
+            "src": "381:1821:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 562,
+            "name": "clauses",
+            "nodeType": "VariableDeclaration",
+            "scope": 645,
+            "src": "2206:38:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Clause_$516_storage_$",
+              "typeString": "mapping(uint256 => struct Covid19usecase.Clause)"
+            },
+            "typeName": {
+              "id": 561,
+              "keyType": {
+                "id": 559,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "2214:4:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "2206:23:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Clause_$516_storage_$",
+                "typeString": "mapping(uint256 => struct Covid19usecase.Clause)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 560,
+                "name": "Clause",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 516,
+                "src": "2222:6:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Clause_$516_storage_ptr",
+                  "typeString": "struct Covid19usecase.Clause"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 570,
+            "name": "ClauseCreated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 569,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 564,
+                  "indexed": false,
+                  "name": "id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 570,
+                  "src": "2274:7:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 563,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2274:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 566,
+                  "indexed": false,
+                  "name": "content",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 570,
+                  "src": "2287:14:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 565,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2287:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 568,
+                  "indexed": false,
+                  "name": "agree",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 570,
+                  "src": "2307:10:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 567,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2307:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2268:53:2"
+            },
+            "src": "2249:73:2"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 574,
+            "name": "RequestSumbitted",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 573,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 572,
+                  "indexed": false,
+                  "name": "id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 574,
+                  "src": "2354:7:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 571,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2354:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2348:17:2"
+            },
+            "src": "2326:40:2"
+          },
+          {
+            "body": {
+              "id": 581,
+              "nodeType": "Block",
+              "src": "2422:29:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 579,
+                    "name": "clauseCount",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 509,
+                    "src": "2435:11:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 578,
+                  "id": 580,
+                  "nodeType": "Return",
+                  "src": "2428:18:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 582,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getClauseCount",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 575,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2393:2:2"
+            },
+            "returnParameters": {
+              "id": 578,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 577,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 582,
+                  "src": "2417:4:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 576,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2417:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2416:6:2"
+            },
+            "scope": 645,
+            "src": "2370:81:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 589,
+              "nodeType": "Block",
+              "src": "2510:23:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 587,
+                    "name": "State",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 529,
+                    "src": "2523:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_contractState_$527",
+                      "typeString": "enum Covid19usecase.contractState"
+                    }
+                  },
+                  "functionReturnParameters": 586,
+                  "id": 588,
+                  "nodeType": "Return",
+                  "src": "2516:12:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 590,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getState",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 583,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2472:2:2"
+            },
+            "returnParameters": {
+              "id": 586,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 585,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 590,
+                  "src": "2496:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_contractState_$527",
+                    "typeString": "enum Covid19usecase.contractState"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 584,
+                    "name": "contractState",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 527,
+                    "src": "2496:13:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_contractState_$527",
+                      "typeString": "enum Covid19usecase.contractState"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2495:15:2"
+            },
+            "scope": 645,
+            "src": "2455:78:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 614,
+              "nodeType": "Block",
+              "src": "2590:144:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 596,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "2596:14:2",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 595,
+                      "name": "clauseCount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 509,
+                      "src": "2596:11:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 597,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2596:14:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 606,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 598,
+                        "name": "clauses",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 562,
+                        "src": "2616:7:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Clause_$516_storage_$",
+                          "typeString": "mapping(uint256 => struct Covid19usecase.Clause storage ref)"
+                        }
+                      },
+                      "id": 600,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 599,
+                        "name": "clauseCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 509,
+                        "src": "2624:11:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "2616:20:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Clause_$516_storage",
+                        "typeString": "struct Covid19usecase.Clause storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 602,
+                          "name": "clauseCount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 509,
+                          "src": "2646:11:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 603,
+                          "name": "_content",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 592,
+                          "src": "2659:8:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "66616c7365",
+                          "id": 604,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "bool",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "2669:5:2",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "value": "false"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        ],
+                        "id": 601,
+                        "name": "Clause",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 516,
+                        "src": "2639:6:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Clause_$516_storage_ptr_$",
+                          "typeString": "type(struct Covid19usecase.Clause storage pointer)"
+                        }
+                      },
+                      "id": 605,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "2639:36:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Clause_$516_memory",
+                        "typeString": "struct Covid19usecase.Clause memory"
+                      }
+                    },
+                    "src": "2616:59:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Clause_$516_storage",
+                      "typeString": "struct Covid19usecase.Clause storage ref"
+                    }
+                  },
+                  "id": 607,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2616:59:2"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 609,
+                        "name": "clauseCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 509,
+                        "src": "2700:11:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 610,
+                        "name": "_content",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 592,
+                        "src": "2713:8:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "66616c7365",
+                        "id": 611,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "bool",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "2723:5:2",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "value": "false"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 608,
+                      "name": "ClauseCreated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 570,
+                      "src": "2686:13:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_string_memory_ptr_$_t_bool_$returns$__$",
+                        "typeString": "function (uint256,string memory,bool)"
+                      }
+                    },
+                    "id": 612,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2686:43:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 613,
+                  "nodeType": "EmitStatement",
+                  "src": "2681:48:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 615,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createClause",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 593,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 592,
+                  "name": "_content",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 615,
+                  "src": "2559:22:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 591,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2559:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2558:24:2"
+            },
+            "returnParameters": {
+              "id": 594,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2590:0:2"
+            },
+            "scope": 645,
+            "src": "2537:197:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 628,
+              "nodeType": "Block",
+              "src": "2779:77:2",
+              "statements": [
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "id": 620,
+                    "name": "agree",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 617,
+                    "src": "2788:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 627,
+                  "nodeType": "IfStatement",
+                  "src": "2785:67:2",
+                  "trueBody": {
+                    "id": 626,
+                    "nodeType": "Block",
+                    "src": "2795:57:2",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 624,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "id": 621,
+                            "name": "State",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 529,
+                            "src": "2803:5:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_contractState_$527",
+                              "typeString": "enum Covid19usecase.contractState"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 622,
+                              "name": "contractState",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 527,
+                              "src": "2809:13:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_enum$_contractState_$527_$",
+                                "typeString": "type(enum Covid19usecase.contractState)"
+                              }
+                            },
+                            "id": 623,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberName": "ReadyforRequireRequest",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "2809:36:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_contractState_$527",
+                              "typeString": "enum Covid19usecase.contractState"
+                            }
+                          },
+                          "src": "2803:42:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_contractState_$527",
+                            "typeString": "enum Covid19usecase.contractState"
+                          }
+                        },
+                        "id": 625,
+                        "nodeType": "ExpressionStatement",
+                        "src": "2803:42:2"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 629,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "agreeClause1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 618,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 617,
+                  "name": "agree",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 629,
+                  "src": "2760:10:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 616,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2760:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2759:12:2"
+            },
+            "returnParameters": {
+              "id": 619,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2779:0:2"
+            },
+            "scope": 645,
+            "src": "2738:118:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 643,
+              "nodeType": "Block",
+              "src": "2900:77:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 637,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 634,
+                      "name": "State",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 529,
+                      "src": "2906:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_contractState_$527",
+                        "typeString": "enum Covid19usecase.contractState"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 635,
+                        "name": "contractState",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 527,
+                        "src": "2912:13:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_contractState_$527_$",
+                          "typeString": "type(enum Covid19usecase.contractState)"
+                        }
+                      },
+                      "id": 636,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "ReadyforReview",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "2912:28:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_contractState_$527",
+                        "typeString": "enum Covid19usecase.contractState"
+                      }
+                    },
+                    "src": "2906:34:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_contractState_$527",
+                      "typeString": "enum Covid19usecase.contractState"
+                    }
+                  },
+                  "id": 638,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2906:34:2"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 640,
+                        "name": "_id",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 631,
+                        "src": "2968:3:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 639,
+                      "name": "RequestSumbitted",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 574,
+                      "src": "2951:16:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 641,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2951:21:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 642,
+                  "nodeType": "EmitStatement",
+                  "src": "2946:26:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 644,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "submitRequest",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 632,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 631,
+                  "name": "_id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 644,
+                  "src": "2883:8:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 630,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2883:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2882:10:2"
+            },
+            "returnParameters": {
+              "id": 633,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2900:0:2"
+            },
+            "scope": 645,
+            "src": "2860:117:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 646,
+        "src": "63:2916:2"
+      }
+    ],
+    "src": "0:2979:2"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/jenniferzhan/Desktop/data_sharing_contract/contracts/Covid19usecase.sol",
+    "exportedSymbols": {
+      "Covid19usecase": [
+        645
+      ]
+    },
+    "id": 646,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 506,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:2"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 645,
+        "linearizedBaseContracts": [
+          645
+        ],
+        "name": "Covid19usecase",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 509,
+            "name": "clauseCount",
+            "nodeType": "VariableDeclaration",
+            "scope": 645,
+            "src": "90:20:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 507,
+              "name": "uint",
+              "nodeType": "ElementaryTypeName",
+              "src": "90:4:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "30",
+              "id": 508,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "109:1:2",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_0_by_1",
+                "typeString": "int_const 0"
+              },
+              "value": "0"
+            },
+            "visibility": "internal"
+          },
+          {
+            "canonicalName": "Covid19usecase.Clause",
+            "id": 516,
+            "members": [
+              {
+                "constant": false,
+                "id": 511,
+                "name": "id",
+                "nodeType": "VariableDeclaration",
+                "scope": 516,
+                "src": "135:7:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 510,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "135:4:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 513,
+                "name": "content",
+                "nodeType": "VariableDeclaration",
+                "scope": 516,
+                "src": "148:14:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 512,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "148:6:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 515,
+                "name": "agree",
+                "nodeType": "VariableDeclaration",
+                "scope": 516,
+                "src": "168:10:2",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 514,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "168:4:2",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Clause",
+            "nodeType": "StructDefinition",
+            "scope": 645,
+            "src": "115:69:2",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "Covid19usecase.contractState",
+            "id": 527,
+            "members": [
+              {
+                "id": 517,
+                "name": "NotReady",
+                "nodeType": "EnumValue",
+                "src": "214:8:2"
+              },
+              {
+                "id": 518,
+                "name": "Created",
+                "nodeType": "EnumValue",
+                "src": "224:7:2"
+              },
+              {
+                "id": 519,
+                "name": "ReadyforRequireRequest",
+                "nodeType": "EnumValue",
+                "src": "233:22:2"
+              },
+              {
+                "id": 520,
+                "name": "ReadyforSubmitRequest",
+                "nodeType": "EnumValue",
+                "src": "257:21:2"
+              },
+              {
+                "id": 521,
+                "name": "ReadyforReview",
+                "nodeType": "EnumValue",
+                "src": "280:14:2"
+              },
+              {
+                "id": 522,
+                "name": "Active",
+                "nodeType": "EnumValue",
+                "src": "296:6:2"
+              },
+              {
+                "id": 523,
+                "name": "Inactive",
+                "nodeType": "EnumValue",
+                "src": "304:8:2"
+              },
+              {
+                "id": 524,
+                "name": "Aborted",
+                "nodeType": "EnumValue",
+                "src": "314:7:2"
+              },
+              {
+                "id": 525,
+                "name": "Terminate",
+                "nodeType": "EnumValue",
+                "src": "323:9:2"
+              },
+              {
+                "id": 526,
+                "name": "Expire",
+                "nodeType": "EnumValue",
+                "src": "334:6:2"
+              }
+            ],
+            "name": "contractState",
+            "nodeType": "EnumDefinition",
+            "src": "188:156:2"
+          },
+          {
+            "constant": false,
+            "id": 529,
+            "name": "State",
+            "nodeType": "VariableDeclaration",
+            "scope": 645,
+            "src": "349:26:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_enum$_contractState_$527",
+              "typeString": "enum Covid19usecase.contractState"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 528,
+              "name": "contractState",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 527,
+              "src": "349:13:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_enum$_contractState_$527",
+                "typeString": "enum Covid19usecase.contractState"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 557,
+              "nodeType": "Block",
+              "src": "402:1800:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "466f7220656163682070726f706f7365642052657365617263682050726f6a6563742c205573657228732920616772656528732920746f207375626d69742061204461746120557365205265717565737420746f2074686520446174612041636365737320436f6d6d697474656520666f722072657669657720616e6420617070726f76616c20746f206163636573732074686520446174612e",
+                        "id": 533,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "421:156:2",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_64b0aed3e865830816360445eba7af11129e0a229e3193fa0e34c2186f54836c",
+                          "typeString": "literal_string \"For each proposed Research Project, User(s) agree(s) to submit a Data Use Request to the Data Access Committee for review and approval to access the Data.\""
+                        },
+                        "value": "For each proposed Research Project, User(s) agree(s) to submit a Data Use Request to the Data Access Committee for review and approval to access the Data."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_64b0aed3e865830816360445eba7af11129e0a229e3193fa0e34c2186f54836c",
+                          "typeString": "literal_string \"For each proposed Research Project, User(s) agree(s) to submit a Data Use Request to the Data Access Committee for review and approval to access the Data.\""
+                        }
+                      ],
+                      "id": 532,
+                      "name": "createClause",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 615,
+                      "src": "408:12:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 534,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "408:170:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 535,
+                  "nodeType": "ExpressionStatement",
+                  "src": "408:170:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "5573657228732920616772656528732920746f206e6f7420617474656d707420746f20636f6e7461637420616e7920696e646976696475616c732077686f2061726520746865207375626a65637473206f662074686520446174612c20616e79206b6e6f776e206c6976696e672072656c6174697665732c20616e79204461746120436f6e7472696275746f72732c206f72206865616c7468636172652070726f76696465727320756e6c657373207265717569726564206279206c617720746f206d61696e7461696e207075626c6963206865616c746820616e64207361666574792e205573657228732920616772656520746f207265706f727420616e7920756e617574686f72697a65642061636365737320757365287329206f7220646973636c6f73757265287329206f66207468652044617461206279206f746865722075736572732028636f6c6c61626f7261746f722920746f2074686520446174612041636365737320436f6d6d6974746565206e6f206c61746572207468616e203220627573696e657373206461797320616674657220646973636f766572792e20546865206f6363757272656e6365206f66206120446174612041636365737320496e636964656e742069732067726f756e6420666f722073757370656e73696f6e206f66206669667465656e2064617973206f6620616e792061636365737320746f20446174612e",
+                        "id": 537,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "597:525:2",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_8e1c3435a8ca9f7a0893432df672d30e8843b54aa6e8577fafacc1f618bcf9fe",
+                          "typeString": "literal_string \"User(s) agree(s) to not attempt to contact any individuals who are the subjects of the Data, any known living relatives, any Data Contributors, or healthcare providers unless required by law to maintain public health and safety. User(s) agree to report any unauthorized access use(s) or disclosure(s) of the Data by other users (collaborator) to the Data Access Committee no later than 2 business days after discovery. The occurrence of a Data Access Incident is ground for suspension of fifteen days of any access to Data.\""
+                        },
+                        "value": "User(s) agree(s) to not attempt to contact any individuals who are the subjects of the Data, any known living relatives, any Data Contributors, or healthcare providers unless required by law to maintain public health and safety. User(s) agree to report any unauthorized access use(s) or disclosure(s) of the Data by other users (collaborator) to the Data Access Committee no later than 2 business days after discovery. The occurrence of a Data Access Incident is ground for suspension of fifteen days of any access to Data."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_8e1c3435a8ca9f7a0893432df672d30e8843b54aa6e8577fafacc1f618bcf9fe",
+                          "typeString": "literal_string \"User(s) agree(s) to not attempt to contact any individuals who are the subjects of the Data, any known living relatives, any Data Contributors, or healthcare providers unless required by law to maintain public health and safety. User(s) agree to report any unauthorized access use(s) or disclosure(s) of the Data by other users (collaborator) to the Data Access Committee no later than 2 business days after discovery. The occurrence of a Data Access Incident is ground for suspension of fifteen days of any access to Data.\""
+                        }
+                      ],
+                      "id": 536,
+                      "name": "createClause",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 615,
+                      "src": "584:12:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 538,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "584:539:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 539,
+                  "nodeType": "ExpressionStatement",
+                  "src": "584:539:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "457863657074206173207265717569726564206279206c61772c2055736572287329207368616c6c206e6f74206772616e742061636365737320746f20746865204461746120746f20616e7920746869726420706172747920776974686f757420746865207072696f72207772697474656e207065726d697373696f6e207375626d69747465642062792074686520757365727320746f2074686520446174612041636365737320436f6d6d69747465652e205573657228732920616772656520746f207265706f727420616e7920756e617574686f72697a65642061636365737320757365287329206f7220646973636c6f73757265287329206f662074686520446174612062792074686520746869726420706172747920746f2074686520446174612041636365737320436f6d6d6974746565206e6f206c61746572207468616e203220627573696e657373206461797320616674657220646973636f766572792e20546865206f6363757272656e6365206f66206120446174612041636365737320496e636964656e742069732067726f756e6420666f72207465726d696e6174696f6e206f6620616e792061636365737320746f20446174612e",
+                        "id": 541,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1142:449:2",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_216fba857f8a444082b35cdd093950c88cac27d63f16e1e22c548e556d5cc590",
+                          "typeString": "literal_string \"Except as required by law, User(s) shall not grant access to the Data to any third party without the prior written permission submitted by the users to the Data Access Committee. User(s) agree to report any unauthorized access use(s) or disclosure(s) of the Data by the third party to the Data Access Committee no later than 2 business days after discovery. The occurrence of a Data Access Incident is ground for termination of any access to Data.\""
+                        },
+                        "value": "Except as required by law, User(s) shall not grant access to the Data to any third party without the prior written permission submitted by the users to the Data Access Committee. User(s) agree to report any unauthorized access use(s) or disclosure(s) of the Data by the third party to the Data Access Committee no later than 2 business days after discovery. The occurrence of a Data Access Incident is ground for termination of any access to Data."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_216fba857f8a444082b35cdd093950c88cac27d63f16e1e22c548e556d5cc590",
+                          "typeString": "literal_string \"Except as required by law, User(s) shall not grant access to the Data to any third party without the prior written permission submitted by the users to the Data Access Committee. User(s) agree to report any unauthorized access use(s) or disclosure(s) of the Data by the third party to the Data Access Committee no later than 2 business days after discovery. The occurrence of a Data Access Incident is ground for termination of any access to Data.\""
+                        }
+                      ],
+                      "id": 540,
+                      "name": "createClause",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 615,
+                      "src": "1129:12:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 542,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1129:463:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 543,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1129:463:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "54686520446174612055736520526571756573742077696c6c2072656d61696e20696e2065666665637420666f72206120706572696f64206f662066697665202835292079656172732066726f6d20746865204461746120557365205265717565737420456666656374697665204461746520616e642077696c6c206175746f6d61746963616c6c79206578706972652061742074686520656e64206f66207468697320706572696f6420756e6c657373207465726d696e61746564206f722072656e657765642e",
+                        "id": 545,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1611:202:2",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_e034db0c24262930928e11f7ee7c20ff9f89a336c2d6baf7297c4ee2e247f23a",
+                          "typeString": "literal_string \"The Data Use Request will remain in effect for a period of five (5) years from the Data Use Request Effective Date and will automatically expire at the end of this period unless terminated or renewed.\""
+                        },
+                        "value": "The Data Use Request will remain in effect for a period of five (5) years from the Data Use Request Effective Date and will automatically expire at the end of this period unless terminated or renewed."
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_e034db0c24262930928e11f7ee7c20ff9f89a336c2d6baf7297c4ee2e247f23a",
+                          "typeString": "literal_string \"The Data Use Request will remain in effect for a period of five (5) years from the Data Use Request Effective Date and will automatically expire at the end of this period unless terminated or renewed.\""
+                        }
+                      ],
+                      "id": 544,
+                      "name": "createClause",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 615,
+                      "src": "1598:12:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 546,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1598:216:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 547,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1598:216:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "5573657228732920616772656528732920746f207265636f676e697a6520746865206566666f72742074686174204461746120436f6e7472696275746f72287329206d61646520696e20636f6c6c656374696e6720616e642070726f766964696e6720746865204461746120616e6420616c6c6f772074686520666f6c6c6f77696e6720696e666f726d6174696f6e20696e2074686520617070726f766564204461746120557365205265717565737420746f206265206d616465207075626c69636c7920617661696c61626c653a206e6f6e2d636f6e666964656e7469616c2072657365617263682073746174656d656e74206f66207468652052657365617263682050726f6a6563742c2050726f6a656374205469746c652c205573657273e28099206e616d657320616e6420416363657373696e6720496e737469747574696f6e287329",
+                        "id": 549,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1833:329:2",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_c3440367edf5c3852c95dd3c999966858c4f34a31301701556a68bef844f7e40",
+                          "typeString": "literal_string \"User(s) agree(s) to recognize the effort that Data Contributor(s) made in collecting and providing the Data and allow the following information in the approved Data Use Request to be made publicly available: non-confidential research statement of the Research Project, Project Title, Users’ names and Accessing Institution(s)\""
+                        },
+                        "value": "User(s) agree(s) to recognize the effort that Data Contributor(s) made in collecting and providing the Data and allow the following information in the approved Data Use Request to be made publicly available: non-confidential research statement of the Research Project, Project Title, Users’ names and Accessing Institution(s)"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_stringliteral_c3440367edf5c3852c95dd3c999966858c4f34a31301701556a68bef844f7e40",
+                          "typeString": "literal_string \"User(s) agree(s) to recognize the effort that Data Contributor(s) made in collecting and providing the Data and allow the following information in the approved Data Use Request to be made publicly available: non-confidential research statement of the Research Project, Project Title, Users’ names and Accessing Institution(s)\""
+                        }
+                      ],
+                      "id": 548,
+                      "name": "createClause",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 615,
+                      "src": "1820:12:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (string memory)"
+                      }
+                    },
+                    "id": 550,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1820:343:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 551,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1820:343:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 555,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 552,
+                      "name": "State",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 529,
+                      "src": "2169:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_contractState_$527",
+                        "typeString": "enum Covid19usecase.contractState"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 553,
+                        "name": "contractState",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 527,
+                        "src": "2175:13:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_contractState_$527_$",
+                          "typeString": "type(enum Covid19usecase.contractState)"
+                        }
+                      },
+                      "id": 554,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "NotReady",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "2175:22:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_contractState_$527",
+                        "typeString": "enum Covid19usecase.contractState"
+                      }
+                    },
+                    "src": "2169:28:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_contractState_$527",
+                      "typeString": "enum Covid19usecase.contractState"
+                    }
+                  },
+                  "id": 556,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2169:28:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 558,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 530,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "392:2:2"
+            },
+            "returnParameters": {
+              "id": 531,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "402:0:2"
+            },
+            "scope": 645,
+            "src": "381:1821:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 562,
+            "name": "clauses",
+            "nodeType": "VariableDeclaration",
+            "scope": 645,
+            "src": "2206:38:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Clause_$516_storage_$",
+              "typeString": "mapping(uint256 => struct Covid19usecase.Clause)"
+            },
+            "typeName": {
+              "id": 561,
+              "keyType": {
+                "id": 559,
+                "name": "uint",
+                "nodeType": "ElementaryTypeName",
+                "src": "2214:4:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "2206:23:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Clause_$516_storage_$",
+                "typeString": "mapping(uint256 => struct Covid19usecase.Clause)"
+              },
+              "valueType": {
+                "contractScope": null,
+                "id": 560,
+                "name": "Clause",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 516,
+                "src": "2222:6:2",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Clause_$516_storage_ptr",
+                  "typeString": "struct Covid19usecase.Clause"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 570,
+            "name": "ClauseCreated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 569,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 564,
+                  "indexed": false,
+                  "name": "id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 570,
+                  "src": "2274:7:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 563,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2274:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 566,
+                  "indexed": false,
+                  "name": "content",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 570,
+                  "src": "2287:14:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 565,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2287:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 568,
+                  "indexed": false,
+                  "name": "agree",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 570,
+                  "src": "2307:10:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 567,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2307:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2268:53:2"
+            },
+            "src": "2249:73:2"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 574,
+            "name": "RequestSumbitted",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 573,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 572,
+                  "indexed": false,
+                  "name": "id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 574,
+                  "src": "2354:7:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 571,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2354:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2348:17:2"
+            },
+            "src": "2326:40:2"
+          },
+          {
+            "body": {
+              "id": 581,
+              "nodeType": "Block",
+              "src": "2422:29:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 579,
+                    "name": "clauseCount",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 509,
+                    "src": "2435:11:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 578,
+                  "id": 580,
+                  "nodeType": "Return",
+                  "src": "2428:18:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 582,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getClauseCount",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 575,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2393:2:2"
+            },
+            "returnParameters": {
+              "id": 578,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 577,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 582,
+                  "src": "2417:4:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 576,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2417:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2416:6:2"
+            },
+            "scope": 645,
+            "src": "2370:81:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 589,
+              "nodeType": "Block",
+              "src": "2510:23:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 587,
+                    "name": "State",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 529,
+                    "src": "2523:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_contractState_$527",
+                      "typeString": "enum Covid19usecase.contractState"
+                    }
+                  },
+                  "functionReturnParameters": 586,
+                  "id": 588,
+                  "nodeType": "Return",
+                  "src": "2516:12:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 590,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getState",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 583,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2472:2:2"
+            },
+            "returnParameters": {
+              "id": 586,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 585,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 590,
+                  "src": "2496:13:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_contractState_$527",
+                    "typeString": "enum Covid19usecase.contractState"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 584,
+                    "name": "contractState",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 527,
+                    "src": "2496:13:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_contractState_$527",
+                      "typeString": "enum Covid19usecase.contractState"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2495:15:2"
+            },
+            "scope": 645,
+            "src": "2455:78:2",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 614,
+              "nodeType": "Block",
+              "src": "2590:144:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 596,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "2596:14:2",
+                    "subExpression": {
+                      "argumentTypes": null,
+                      "id": 595,
+                      "name": "clauseCount",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 509,
+                      "src": "2596:11:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 597,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2596:14:2"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 606,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 598,
+                        "name": "clauses",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 562,
+                        "src": "2616:7:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_struct$_Clause_$516_storage_$",
+                          "typeString": "mapping(uint256 => struct Covid19usecase.Clause storage ref)"
+                        }
+                      },
+                      "id": 600,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 599,
+                        "name": "clauseCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 509,
+                        "src": "2624:11:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "2616:20:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Clause_$516_storage",
+                        "typeString": "struct Covid19usecase.Clause storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "id": 602,
+                          "name": "clauseCount",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 509,
+                          "src": "2646:11:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "id": 603,
+                          "name": "_content",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 592,
+                          "src": "2659:8:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "66616c7365",
+                          "id": 604,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "bool",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "2669:5:2",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          },
+                          "value": "false"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        ],
+                        "id": 601,
+                        "name": "Clause",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 516,
+                        "src": "2639:6:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Clause_$516_storage_ptr_$",
+                          "typeString": "type(struct Covid19usecase.Clause storage pointer)"
+                        }
+                      },
+                      "id": 605,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "2639:36:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Clause_$516_memory",
+                        "typeString": "struct Covid19usecase.Clause memory"
+                      }
+                    },
+                    "src": "2616:59:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Clause_$516_storage",
+                      "typeString": "struct Covid19usecase.Clause storage ref"
+                    }
+                  },
+                  "id": 607,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2616:59:2"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 609,
+                        "name": "clauseCount",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 509,
+                        "src": "2700:11:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "id": 610,
+                        "name": "_content",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 592,
+                        "src": "2713:8:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "66616c7365",
+                        "id": 611,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "bool",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "2723:5:2",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "value": "false"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      ],
+                      "id": 608,
+                      "name": "ClauseCreated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 570,
+                      "src": "2686:13:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$_t_string_memory_ptr_$_t_bool_$returns$__$",
+                        "typeString": "function (uint256,string memory,bool)"
+                      }
+                    },
+                    "id": 612,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2686:43:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 613,
+                  "nodeType": "EmitStatement",
+                  "src": "2681:48:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 615,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createClause",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 593,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 592,
+                  "name": "_content",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 615,
+                  "src": "2559:22:2",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 591,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2559:6:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2558:24:2"
+            },
+            "returnParameters": {
+              "id": 594,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2590:0:2"
+            },
+            "scope": 645,
+            "src": "2537:197:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 628,
+              "nodeType": "Block",
+              "src": "2779:77:2",
+              "statements": [
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "id": 620,
+                    "name": "agree",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 617,
+                    "src": "2788:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 627,
+                  "nodeType": "IfStatement",
+                  "src": "2785:67:2",
+                  "trueBody": {
+                    "id": 626,
+                    "nodeType": "Block",
+                    "src": "2795:57:2",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 624,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "id": 621,
+                            "name": "State",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 529,
+                            "src": "2803:5:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_contractState_$527",
+                              "typeString": "enum Covid19usecase.contractState"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 622,
+                              "name": "contractState",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 527,
+                              "src": "2809:13:2",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_enum$_contractState_$527_$",
+                                "typeString": "type(enum Covid19usecase.contractState)"
+                              }
+                            },
+                            "id": 623,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "lValueRequested": false,
+                            "memberName": "ReadyforRequireRequest",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "2809:36:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_enum$_contractState_$527",
+                              "typeString": "enum Covid19usecase.contractState"
+                            }
+                          },
+                          "src": "2803:42:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_contractState_$527",
+                            "typeString": "enum Covid19usecase.contractState"
+                          }
+                        },
+                        "id": 625,
+                        "nodeType": "ExpressionStatement",
+                        "src": "2803:42:2"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 629,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "agreeClause1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 618,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 617,
+                  "name": "agree",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 629,
+                  "src": "2760:10:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 616,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2760:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2759:12:2"
+            },
+            "returnParameters": {
+              "id": 619,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2779:0:2"
+            },
+            "scope": 645,
+            "src": "2738:118:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 643,
+              "nodeType": "Block",
+              "src": "2900:77:2",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 637,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 634,
+                      "name": "State",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 529,
+                      "src": "2906:5:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_contractState_$527",
+                        "typeString": "enum Covid19usecase.contractState"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 635,
+                        "name": "contractState",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 527,
+                        "src": "2912:13:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_contractState_$527_$",
+                          "typeString": "type(enum Covid19usecase.contractState)"
+                        }
+                      },
+                      "id": 636,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "ReadyforReview",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "2912:28:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_contractState_$527",
+                        "typeString": "enum Covid19usecase.contractState"
+                      }
+                    },
+                    "src": "2906:34:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_contractState_$527",
+                      "typeString": "enum Covid19usecase.contractState"
+                    }
+                  },
+                  "id": 638,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2906:34:2"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 640,
+                        "name": "_id",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 631,
+                        "src": "2968:3:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 639,
+                      "name": "RequestSumbitted",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 574,
+                      "src": "2951:16:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_uint256_$returns$__$",
+                        "typeString": "function (uint256)"
+                      }
+                    },
+                    "id": 641,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2951:21:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 642,
+                  "nodeType": "EmitStatement",
+                  "src": "2946:26:2"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 644,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "submitRequest",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 632,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 631,
+                  "name": "_id",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 644,
+                  "src": "2883:8:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 630,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2883:4:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2882:10:2"
+            },
+            "returnParameters": {
+              "id": 633,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2900:0:2"
+            },
+            "scope": 645,
+            "src": "2860:117:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 646,
+        "src": "63:2916:2"
+      }
+    ],
+    "src": "0:2979:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {
+        "0xa478e3ba1c41ddffd320b46a3e953ba655940caa0fbb2356f50123c1ca933686": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "id",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "content",
+              "type": "string"
+            },
+            {
+              "indexed": false,
+              "name": "agree",
+              "type": "bool"
+            }
+          ],
+          "name": "ClauseCreated",
+          "type": "event",
+          "signature": "0xa478e3ba1c41ddffd320b46a3e953ba655940caa0fbb2356f50123c1ca933686"
+        },
+        "0xbdc0810d1cedabb980fd30e01e92a884f0e56653f2cc84cde0ea897a63238afb": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "id",
+              "type": "uint256"
+            }
+          ],
+          "name": "RequestSumbitted",
+          "type": "event",
+          "signature": "0xbdc0810d1cedabb980fd30e01e92a884f0e56653f2cc84cde0ea897a63238afb"
+        }
+      },
+      "links": {},
+      "address": "0x39ec999D864A2EBC186ead8d52E7dC411105409B",
+      "transactionHash": "0xac44aa23cf882079063090a40a4c682f14f69a6be7a9f7d23b1a1ced20f5c9b4"
+    }
+  },
+  "schemaVersion": "3.0.1",
+  "updatedAt": "2021-06-30T07:59:41.130Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
