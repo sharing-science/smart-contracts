@@ -22,10 +22,7 @@ App = {
       window.web3 = new Web3(ethereum)
       console.log("1")
       try {
-        //await ethereum.enable()
         await window.ethereum.request({ method: 'eth_requestAccounts' })
-        // Acccounts now exposed
-        //web3.eth.sendTransaction({/* ... */})
 
       } catch (error) {
         console.log("fail")
@@ -34,8 +31,6 @@ App = {
     else if (window.web3) {
       App.web3Provider = web3.currentProvider
       window.web3 = new Web3(web3.currentProvider)
-      // Acccounts always exposed
-      //web3.eth.sendTransaction({/* ... */})
     }
     else {
       console.log('Non-Ethereum browser detected. You should consider trying MetaMask!')
@@ -44,12 +39,6 @@ App = {
 
 
   loadAccount: async () => {
-    //var accounts = web3.eth.getAccounts()[0];
-    //console.log(accounts);
-    //App.account = web3.eth.accounts[0]
-    //console.log(App.account)
-    //await window.ethereum.enable(); 
-    //load the metamask account
     var accounts = await window.ethereum.request({ method: 'eth_requestAccounts' }); 
     App.account = accounts[0]; 
   },
@@ -71,17 +60,12 @@ App = {
 
     // Update app loading state
     App.setLoading(true)
-    //const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' }); 
-    //const account = accounts[0]; 
-    // Render Account
     console.log(App.account)
     $('#account').html(App.account)
     console.log("success111")
-    // Render Tasks
     await App.renderClauses()
     console.log("success")
 
-    // Update loading state
     App.setLoading(false)
   },
 
@@ -89,11 +73,10 @@ App = {
     // Load the total clause count from the blockchain
     const clauseCount = await App.covid19usecase.getClauseCount()
     const $clauseTemplate = $('.clauseTemplate')
-    //const $uploadTemplate=$('.upload_request')
-    
+
     console.log(clauseCount)
 
-    // Render out each clause with a new clause template
+    // copy the clause template and put in the clause content
     for (var i = 1; i <= clauseCount; i++) {
       // Fetch the clause data from the blockchain
       const clause = await App.covid19usecase.clauses(i)
@@ -104,8 +87,6 @@ App = {
 
       // Create the html for the clause
       const $newClauseTemplate = $clauseTemplate.clone()
-      //const $newuploadTemplate = $uploadTemplate.clone()
-      //const $newupload=$showupload.clone()
       console.log(clauseId)
       
       $newClauseTemplate.find('.content').html(clauseContent)
@@ -113,10 +94,7 @@ App = {
       const agreeId='agree'+clauseId
       $newClauseTemplate.find('input')
                       .prop('id', agreeId)
-                      //.prop('checked', App.submitRequest)
-                      //.on('click', App.submitRequest)
-      //const requestId='request'+i
-      //$newuploadTemplate.find('div').prop('id', requestId)
+     
       const requestId='request'+clauseId
       $newClauseTemplate.find('button')
                       .prop('id', requestId)
@@ -124,18 +102,6 @@ App = {
       $showupload.on('click', App.requireRequest)
       const $uploadRequest=$('#request1')
       $uploadRequest.on('click', App.submitRequest)
-
-      //$newupload.on('click', App.submitRequest)
-      //document.getElementById("1").onclick=submitRequest()
-      
-      
-      // Put the clause in the correct list
-      console.log($newClauseTemplate)
-      if (clauseAgree) {
-        $('#completedClauseList').append($newClauseTemplate)
-      } else {
-        $('#clauseList').append($newClauseTemplate)
-      }
 
       $newClauseTemplate.show()
     }
@@ -162,11 +128,7 @@ App = {
 
   //change state to ReadyforReview
   submitRequest: async () => {
-    //web3.eth.defaultAccount = accounts[0]
-    //let accounts = await web3.eth.getAccounts()
-    //web3.eth.defaultAccount = accounts[0]
     await App.covid19usecase.submitRequest(App.clauseId,{from: App.account})
-    //const currentState=App.covid19usecase.getState()
     console.log(App.covid19usecase.getState())
   }
 
