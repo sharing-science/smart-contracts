@@ -131,7 +131,7 @@ const init = async () => {
      */
     let result = await contract.methods.transferBioMedicalData(account1, account2).send({from:account1});
     assert(result);
-    console.log(result);
+    //console.log(result);
 
     assert(await contract.methods.balanceOf(account1).call() == 80);
     assert(await contract.methods.balanceOf(account2).call() == 20);
