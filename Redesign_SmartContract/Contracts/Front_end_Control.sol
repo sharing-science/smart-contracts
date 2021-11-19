@@ -1,48 +1,54 @@
 pragma solidity ^0.6.0;
+import "./main.sol";
 
 contract Front_end_Control {
+  Main public mainController;
+
+  constructor(Main _mainController) public {
+    mainController=_mainController;
+  }
   function getClauseCount() public view returns (uint256) {
-    return clauseCount;
+    return mainController.clauseCount;
   }
 
   function getClause(uint256 num) public view returns (string memory) {
-    return clauses[num].content;
+    return mainController.clauses[num].content;
   }
 
   function getClauseStatus(uint256 id) public view returns (bool) {
-    return clauses[id].agree;
+    return mainController.clauses[id].agree;
   }
 
   function getReportCount() public view returns (uint256) {
-    return reportCount;
+    return mainController.reportCount;
   }
 
   function getReportId(uint256 num) public view returns (uint256) {
-    return Reports[num].id;
+    return mainController.Reports[num].id;
   }
 
   function getReportType(uint256 num) public view returns (string memory) {
-    return Reports[num].reportType;
+    return mainController.Reports[num].reportType;
   }
 
   function getReportAccount(uint256 num) public view returns (string memory) {
-    return Reports[num].reportAccount;
+    return mainController.Reports[num].reportAccount;
   }
 
   function getReportReason(uint256 num) public view returns (string memory) {
-    return Reports[num].reportReason;
+    return mainController.Reports[num].reportReason;
   }
 
   function getStateName() public view returns (string memory){
-    return stateName;
+    return mainController.stateName;
   }
 
   function getClauseAgree(uint i) public view returns (bool) {
-    return clauses[i].agree;
+    return mainController.clauses[i].agree;
   }
 
   function getNumber() public view returns (uint){
-    return Number;
+    return mainController.Number;
   }
 
 }
